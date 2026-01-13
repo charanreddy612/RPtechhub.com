@@ -31,7 +31,7 @@ const BPOServices: React.FC = () => {
     <main className="bg-slate-50 min-h-screen">
       <PageHero 
         category="Business Process Outsourcing" 
-        title="Lean Operational <br/> Orchestration" 
+        title="Lean Operational Orchestration" 
         subtitle="Moving beyond simple outsourcing. We engineer high-precision back-office ecosystems built on Lean Six Sigma methodology." 
       />
 

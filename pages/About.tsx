@@ -54,7 +54,7 @@ const AboutPage: React.FC = () => {
       {/* 1. Page Hero */}
       <PageHero 
         category="Corporate Identity" 
-        title="The Black Label <br/> Strategic Protocol" 
+        title="The Black Label Strategic Protocol" 
         subtitle="Engineering high-impact enterprise solutions through mathematical precision and elite multi-disciplinary synergy." 
       />
 

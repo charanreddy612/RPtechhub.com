@@ -26,7 +26,7 @@ const MarketingPage: React.FC = () => {
     <main className="bg-slate-950 min-h-screen">
       <PageHero 
         category="Performance Marketing" 
-        title="ROAS-Centric <br/> Growth Lab" 
+        title="ROAS-Centric Growth Lab" 
         subtitle="Engineering market dominance through semantic SEO, data-driven paid media, and automated conversion pipelines." 
       />
 

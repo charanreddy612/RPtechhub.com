@@ -21,7 +21,7 @@ const RealEstatePage: React.FC = () => {
     <main className="bg-white min-h-screen">
       <PageHero 
         category="Strategic Real Estate" 
-        title="Institutional Land <br/> & Industrial Assets" 
+        title="Institutional Land & Industrial Assets" 
         subtitle="Unlocking high-yield industrial corridors through our proprietary 100-point legal verification protocol." 
       />
 

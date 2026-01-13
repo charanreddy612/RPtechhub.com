@@ -46,7 +46,7 @@ const ITServices: React.FC = () => {
       {/* 1. Page Hero */}
       <PageHero 
         category="IT Infrastructure & Intelligence" 
-        title="Engineering The <br/> Digital Sovereign" 
+        title="Engineering The Digital Sovereign" 
         subtitle="Where mathematical precision meets autonomous intelligence. We build the fortresses and brains that power modern global enterprise." 
       />
 
