@@ -1,0 +1,7 @@
+{
+  "name": "RPtechhub - Black Label Enterprise Agency",
+  "description": "A premium multi-disciplinary enterprise agency ecosystem specializing in IT, BPO, Digital Marketing, and Real Estate with integrated AI strategic consultation.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
