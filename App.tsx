@@ -4,7 +4,6 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar.tsx';
 import AIStrategist from './components/AIStrategist.tsx';
 import Footer from './components/Footer.tsx';
-import Reveal from './components/Reveal.tsx';
 import { SCHEMA_ORG } from './constants.tsx';
 
 // Lazy-style imports (direct imports for now)
@@ -34,18 +33,16 @@ export default function App() {
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <div className="flex-grow">
-          {/* Main Content Reveal Wrapper */}
-          <Reveal>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/it-services" element={<ITServices />} />
-              <Route path="/bpo-services" element={<BPOServices />} />
-              <Route path="/marketing" element={<MarketingPage />} />
-              <Route path="/real-estate" element={<RealEstatePage />} />
-              <Route path="/about" element={<AboutPage />} />
-              <Route path="/contact" element={<ContactPage />} />
-            </Routes>
-          </Reveal>
+          {/* Main Content: Routes are now direct children to ensure initial rendering visibility */}
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/it-services" element={<ITServices />} />
+            <Route path="/bpo-services" element={<BPOServices />} />
+            <Route path="/marketing" element={<MarketingPage />} />
+            <Route path="/real-estate" element={<RealEstatePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+          </Routes>
         </div>
         <Footer />
         <AIStrategist />
