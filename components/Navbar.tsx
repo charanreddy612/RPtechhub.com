@@ -42,7 +42,7 @@ const Navbar: React.FC = () => {
             className={`
               transition-all duration-300 ease-out
               ${isScrolled ? "h-12 md:h-16" : "h-28 md:h-36"}
-              group-hover:drop-shadow-[0_0_30px_rgba(59,130,246,0.6)]
+              group-hover:drop-shadow-[0_0_30px_rgba(59,130,246,0.45)]
             `}
           />
         </Link>
