@@ -6,15 +6,20 @@ export class GeminiService {
   constructor() {}
 
   async *sendMessageStream(history: { role: 'user' | 'model'; parts: { text: string }[] }[]) {
-    // Ensure the history alternates correctly. If the very first message is from the model,
-    // some model versions might require it to be passed as initial system context or start with user.
-    // For simplicity, we ensure the contents array is clean.
+    // CRITICAL FIX: The Gemini API requires the conversation to start with a 'user' role.
+    // We filter the history to ensure we only send data starting from the first user interaction.
+    let validHistory = history;
+    const firstUserIndex = history.findIndex(m => m.role === 'user');
+    if (firstUserIndex !== -1) {
+      validHistory = history.slice(firstUserIndex);
+    }
+
     const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
     
     try {
       const responseStream = await ai.models.generateContentStream({
         model: 'gemini-3-flash-preview',
-        contents: history,
+        contents: validHistory,
         config: {
           systemInstruction: SYSTEM_INSTRUCTION,
           temperature: 0.8,

@@ -9,7 +9,7 @@ export const SERVICES: Service[] = [
     category: 'IT',
     title: 'AI Engineering & RAG',
     description: 'Bespoke large language model integration and retrieval-augmented generation systems.',
-    icon: <Cpu className="w-6 h-6 text-amber-500" />,
+    icon: <Cpu className="w-6 h-6 text-blue-500" />,
     features: ['Custom LLM Fine-tuning', 'Vector Database Architecture', 'Autonomous Agents']
   },
   {
@@ -17,7 +17,7 @@ export const SERVICES: Service[] = [
     category: 'IT',
     title: 'NexGen SOC & Cybersecurity',
     description: 'Military-grade security operations center with real-time threat detection.',
-    icon: <Shield className="w-6 h-6 text-amber-500" />,
+    icon: <Shield className="w-6 h-6 text-blue-500" />,
     features: ['24/7 Monitoring', 'Zero-Trust Architecture', 'Incident Response']
   },
   {
@@ -25,7 +25,7 @@ export const SERVICES: Service[] = [
     category: 'BPO',
     title: 'Healthcare RCM',
     description: 'Precision revenue cycle management for enterprise healthcare providers.',
-    icon: <HeartPulse className="w-6 h-6 text-amber-500" />,
+    icon: <HeartPulse className="w-6 h-6 text-blue-500" />,
     features: ['Claims Processing', 'Denial Management', 'Patient Eligibility']
   },
   {
@@ -33,7 +33,7 @@ export const SERVICES: Service[] = [
     category: 'BPO',
     title: 'Manufacturing Efficiency',
     description: 'Lean Six Sigma optimized back-office for industrial giants.',
-    icon: <Factory className="w-6 h-6 text-amber-500" />,
+    icon: <Factory className="w-6 h-6 text-blue-500" />,
     features: ['Supply Chain Logistics', 'Quality Control Audits', 'Process Automation']
   },
   {
@@ -41,7 +41,7 @@ export const SERVICES: Service[] = [
     category: 'Marketing',
     title: 'ROI-Driven Growth',
     description: 'Data-driven performance marketing focused on pure ROAS.',
-    icon: <BarChart3 className="w-6 h-6 text-amber-500" />,
+    icon: <BarChart3 className="w-6 h-6 text-blue-500" />,
     features: ['PPC Management', 'Conversion Rate Optimization', 'Predictive Analytics']
   },
   {
@@ -49,7 +49,7 @@ export const SERVICES: Service[] = [
     category: 'Marketing',
     title: 'Technical SEO',
     description: 'Semantic core architecture and high-authority link acquisition.',
-    icon: <Search className="w-6 h-6 text-amber-500" />,
+    icon: <Search className="w-6 h-6 text-blue-500" />,
     features: ['Schema Markup', 'Core Web Vitals Optimization', 'Content Clusters']
   },
   {
@@ -57,7 +57,7 @@ export const SERVICES: Service[] = [
     category: 'RealEstate',
     title: 'Strategic Infrastructure',
     description: 'High-value land acquisition and industrial development corridors.',
-    icon: <Building2 className="w-6 h-6 text-amber-500" />,
+    icon: <Building2 className="w-6 h-6 text-blue-500" />,
     features: ['100-Point Legal Verification', 'Zoning Analysis', 'JV Partnerships']
   }
 ];

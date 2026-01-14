@@ -1,7 +1,20 @@
 
 import React from 'react';
-import { Rocket, Twitter, Linkedin, Github, Mail, MapPin, Phone } from 'lucide-react';
+import { Twitter, Linkedin, Github, Mail, MapPin, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
+
+const InfinityLogo = ({ className = "w-10 h-10" }) => (
+  <svg viewBox="0 0 100 40" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+    <rect x="5" y="10" width="2" height="2" fill="currentColor" opacity="0.4"/>
+    <rect x="8" y="15" width="2" height="2" fill="currentColor" opacity="0.6"/>
+    <rect x="2" y="18" width="2" height="2" fill="currentColor" opacity="0.3"/>
+    <rect x="10" y="5" width="2" height="2" fill="currentColor" opacity="0.5"/>
+    <rect x="12" y="22" width="2" height="2" fill="currentColor" opacity="0.7"/>
+    <rect x="15" y="12" width="2" height="2" fill="currentColor" opacity="0.8"/>
+    <path d="M30 20C30 26.6274 35.3726 32 42 32C48.6274 32 54 26.6274 54 20C54 13.3726 59.3726 8 66 8C72.6274 8 78 13.3726 78 20C78 26.6274 72.6274 32 66 32C59.3726 32 54 26.6274 54 20C54 13.3726 48.6274 8 42 8C35.3726 8 30 13.3726 30 20Z" 
+          stroke="currentColor" strokeWidth="4" strokeLinecap="round"/>
+  </svg>
+);
 
 const Footer: React.FC = () => {
   return (
@@ -10,11 +23,11 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
           <div className="space-y-6">
             <Link to="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-amber-500 rounded-lg flex items-center justify-center">
-                <Rocket className="text-slate-950 w-6 h-6" />
+              <div className="flex items-center justify-center text-blue-500">
+                <InfinityLogo className="w-12 h-10" />
               </div>
               <span className="text-2xl font-black tracking-tighter text-white uppercase italic">
-                RP<span className="text-amber-500">techhub</span>
+                RP<span className="text-blue-500">techhub</span>
               </span>
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
@@ -23,7 +36,7 @@ const Footer: React.FC = () => {
             </p>
             <div className="flex space-x-4">
               {[Twitter, Linkedin, Github].map((Icon, i) => (
-                <a key={i} href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-slate-400 hover:text-amber-500 hover:border-amber-500 transition-all">
+                <a key={i} href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-slate-400 hover:text-blue-500 hover:border-blue-500 transition-all">
                   <Icon size={18} />
                 </a>
               ))}
@@ -41,7 +54,7 @@ const Footer: React.FC = () => {
                 { name: 'ROI Marketing', path: '/marketing' }
               ].map((link) => (
                 <li key={link.name}>
-                  <Link to={link.path} className="text-slate-500 hover:text-amber-500 text-sm font-semibold transition-colors uppercase tracking-widest">{link.name}</Link>
+                  <Link to={link.path} className="text-slate-500 hover:text-blue-500 text-sm font-semibold transition-colors uppercase tracking-widest">{link.name}</Link>
                 </li>
               ))}
             </ul>
@@ -58,7 +71,7 @@ const Footer: React.FC = () => {
                 { name: 'Careers', path: '/' }
               ].map((link) => (
                 <li key={link.name}>
-                  <Link to={link.path} className="text-slate-500 hover:text-amber-500 text-sm font-semibold transition-colors uppercase tracking-widest">{link.name}</Link>
+                  <Link to={link.path} className="text-slate-500 hover:text-blue-500 text-sm font-semibold transition-colors uppercase tracking-widest">{link.name}</Link>
                 </li>
               ))}
             </ul>
@@ -68,15 +81,15 @@ const Footer: React.FC = () => {
             <h4 className="text-xs uppercase tracking-[0.3em] font-black text-white mb-8">Global Reach</h4>
             <ul className="space-y-4">
               <li className="flex items-start space-x-3 text-slate-500">
-                <MapPin className="w-4 h-4 mt-1 text-amber-500 shrink-0" />
+                <MapPin className="w-4 h-4 mt-1 text-blue-500 shrink-0" />
                 <span className="text-sm font-semibold leading-tight tracking-wide">Enterprise Tower, Level 42 <br /> London, EC1A 1BB</span>
               </li>
               <li className="flex items-center space-x-3 text-slate-500">
-                <Phone className="w-4 h-4 text-amber-500 shrink-0" />
+                <Phone className="w-4 h-4 text-blue-500 shrink-0" />
                 <span className="text-sm font-semibold tracking-wide">+44 (0) 20 8123 4567</span>
               </li>
               <li className="flex items-center space-x-3 text-slate-500">
-                <Mail className="w-4 h-4 text-amber-500 shrink-0" />
+                <Mail className="w-4 h-4 text-blue-500 shrink-0" />
                 <span className="text-sm font-semibold tracking-wide">strategy@rptechhub.com</span>
               </li>
             </ul>
@@ -95,8 +108,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
 
-      {/* Background Glow */}
-      <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-amber-500/5 blur-[120px]" />
+      <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-blue-500/5 blur-[120px]" />
     </footer>
   );
 };

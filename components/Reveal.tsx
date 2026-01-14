@@ -19,7 +19,7 @@ const Reveal: React.FC<RevealProps> = ({ children, width = '100%', delay = 0 }) 
           observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.15 }
+      { threshold: 0.1 }
     );
 
     if (ref.current) {
@@ -40,9 +40,9 @@ const Reveal: React.FC<RevealProps> = ({ children, width = '100%', delay = 0 }) 
         position: 'relative',
         width,
         overflow: 'hidden',
-        transition: `all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) ${delay}s`,
+        transition: `all 1.2s cubic-bezier(0.23, 1, 0.32, 1) ${delay}s`,
         opacity: isVisible ? 1 : 0,
-        transform: isVisible ? 'none' : 'translateY(30px)',
+        transform: isVisible ? 'none' : 'translateY(15px)',
       }}
     >
       {children}

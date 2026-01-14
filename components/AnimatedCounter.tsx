@@ -70,7 +70,7 @@ const AnimatedCounter: React.FC<AnimatedCounterProps> = ({
       </span>
       {/* Subtle "energy" glow during animation */}
       {isVisible && count < end * 0.99 && (
-        <span className="absolute inset-0 bg-amber-500/20 blur-xl animate-pulse rounded-full" />
+        <span className="absolute inset-0 bg-blue-500/20 blur-xl animate-pulse rounded-full" />
       )}
     </div>
   );
