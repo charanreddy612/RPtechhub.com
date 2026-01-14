@@ -3,16 +3,27 @@ import React from 'react';
 import { Twitter, Linkedin, Github, Mail, MapPin, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const InfinityLogo = ({ className = "w-10 h-10" }) => (
-  <svg viewBox="0 0 100 40" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-    <rect x="5" y="10" width="2" height="2" fill="currentColor" opacity="0.4"/>
-    <rect x="8" y="15" width="2" height="2" fill="currentColor" opacity="0.6"/>
-    <rect x="2" y="18" width="2" height="2" fill="currentColor" opacity="0.3"/>
-    <rect x="10" y="5" width="2" height="2" fill="currentColor" opacity="0.5"/>
-    <rect x="12" y="22" width="2" height="2" fill="currentColor" opacity="0.7"/>
-    <rect x="15" y="12" width="2" height="2" fill="currentColor" opacity="0.8"/>
-    <path d="M30 20C30 26.6274 35.3726 32 42 32C48.6274 32 54 26.6274 54 20C54 13.3726 59.3726 8 66 8C72.6274 8 78 13.3726 78 20C78 26.6274 72.6274 32 66 32C59.3726 32 54 26.6274 54 20C54 13.3726 48.6274 8 42 8C35.3726 8 30 13.3726 30 20Z" 
-          stroke="currentColor" strokeWidth="4" strokeLinecap="round"/>
+const InfinityLogo = ({ className = "w-12 h-12" }) => (
+  <svg viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+    <g className="text-blue-400">
+      <rect x="10" y="20" width="4" height="4" fill="currentColor" />
+      <rect x="5" y="26" width="3" height="3" fill="currentColor" opacity="0.6" />
+      <rect x="12" y="32" width="4" height="4" fill="currentColor" />
+      <rect x="18" y="14" width="3" height="3" fill="currentColor" opacity="0.8" />
+      <rect x="2" y="15" width="3" height="3" fill="currentColor" opacity="0.4" />
+      <rect x="8" y="8" width="4" height="4" fill="currentColor" opacity="0.5" />
+      <rect x="15" y="42" width="4" height="4" fill="currentColor" />
+      <rect x="22" y="48" width="3" height="3" fill="currentColor" opacity="0.7" />
+    </g>
+    <path 
+      d="M30 45C30 45 45 50 60 30C75 10 90 10 105 10C120 10 120 50 105 50C90 50 75 50 60 30C45 10 30 15 30 15" 
+      stroke="currentColor" 
+      strokeWidth="7" 
+      strokeLinecap="round"
+      className="text-blue-600"
+    />
+    <rect x="25" y="40" width="5" height="5" fill="currentColor" className="text-blue-500" />
+    <rect x="22" y="18" width="4" height="4" fill="currentColor" className="text-blue-500" />
   </svg>
 );
 
@@ -21,14 +32,19 @@ const Footer: React.FC = () => {
     <footer className="bg-slate-950 border-t border-white/10 pt-24 pb-12 overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
-          <div className="space-y-6">
-            <Link to="/" className="flex items-center space-x-2">
-              <div className="flex items-center justify-center text-blue-500">
-                <InfinityLogo className="w-12 h-10" />
+          <div className="space-y-8">
+            <Link to="/" className="flex items-center space-x-4 group">
+              <div className="flex items-center justify-center">
+                <InfinityLogo className="w-24 h-14" />
               </div>
-              <span className="text-2xl font-black tracking-tighter text-white uppercase italic">
-                RP<span className="text-blue-500">techhub</span>
-              </span>
+              <div className="flex flex-col">
+                <span className="text-2xl font-black tracking-tighter text-white uppercase italic leading-none">
+                  RP<span className="text-blue-500">techhub</span>
+                </span>
+                <span className="text-[8px] font-black text-slate-500 uppercase tracking-[0.2em] mt-1">
+                  Established 2018
+                </span>
+              </div>
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
               The world's premium multi-disciplinary enterprise agency ecosystem. 

@@ -36,13 +36,14 @@ const Reveal: React.FC<RevealProps> = ({ children, width = '100%', delay = 0 }) 
   return (
     <div
       ref={ref}
+      className={isVisible ? 'reveal-visible' : ''}
       style={{
         position: 'relative',
         width,
         overflow: 'hidden',
         transition: `all 1.2s cubic-bezier(0.23, 1, 0.32, 1) ${delay}s`,
         opacity: isVisible ? 1 : 0,
-        transform: isVisible ? 'none' : 'translateY(15px)',
+        transform: isVisible ? 'none' : 'translateY(15px) scale(0.98)',
       }}
     >
       {children}
