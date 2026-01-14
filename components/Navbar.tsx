@@ -1,11 +1,6 @@
-
-import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
-
-const InfinityLogo = ({ className = "w-12 h-12" }) => (
-  <svg viewBox="0 0 160 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-32 h-16 md:w-44 md:h-20"><defs><linearGradient id="nav-logo-grad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#60a5fa"></stop><stop offset="100%" stop-color="#1d4ed8"></stop></linearGradient></defs><g class="fill-blue-400"><rect x="5" y="38" width="4" height="4" opacity="0.4"></rect><rect x="12" y="28" width="3" height="3" opacity="0.6"></rect><rect x="10" y="48" width="4" height="4" opacity="0.5"></rect><rect x="18" y="32" width="4" height="4" opacity="0.8"></rect><rect x="22" y="52" width="3" height="3" opacity="0.3"></rect><rect x="30" y="40" width="5" height="5"></rect><rect x="38" y="32" width="4" height="4" opacity="0.7"></rect></g><path d="M45 40 C45 25 70 20 80 40 C90 60 115 65 115 40 C115 15 90 20 80 40 C70 60 45 55 45 40 Z" stroke="url(#nav-logo-grad)" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" class="drop-shadow-[0_0_12px_rgba(59,130,246,0.3)]"></path><rect x="35" y="45" width="6" height="6" class="fill-blue-500"></rect><rect x="42" y="25" width="5" height="5" class="fill-blue-500" opacity="0.8"></rect></svg>
-);
+import React, { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -13,80 +8,101 @@ const Navbar: React.FC = () => {
   const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'IT Services', href: '/it-services' },
-    { name: 'BPO Services', href: '/bpo-services' },
-    { name: 'Marketing', href: '/marketing' },
-    { name: 'Real Estate', href: '/real-estate' },
-    { name: 'About', href: '/about' },
-    { name: 'Contact', href: '/contact' },
+    { name: "Home", href: "/" },
+    { name: "IT Services", href: "/it-services" },
+    { name: "BPO Services", href: "/bpo-services" },
+    { name: "Marketing", href: "/marketing" },
+    { name: "Real Estate", href: "/real-estate" },
+    { name: "About", href: "/about" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'bg-slate-950/95 backdrop-blur-md border-b border-white/10 py-3' : 'bg-transparent py-8'}`}>
-      <div className="max-w-7xl mx-auto px-8 md:px-12 flex justify-between items-center">
-        <Link to="/" className="flex items-center space-x-4 group">
-          <div className="flex items-center justify-center transition-all duration-700 group-hover:scale-105 group-hover:drop-shadow-[0_0_20px_rgba(59,130,246,0.4)]">
-            <InfinityLogo className="w-32 h-16 md:w-40 md:h-18" />
-          </div>
-          <div className="flex flex-col">
-            <span className="text-2xl md:text-3xl font-black tracking-tighter text-white uppercase italic leading-none">
-              RP<span className="text-blue-500">techhub</span>
-            </span>
-            <span className="text-[7px] md:text-[8px] font-black text-blue-400 uppercase tracking-[0.4em] mt-2 opacity-80 group-hover:opacity-100 transition-all">
-              Innovation Meets Execution
-            </span>
-          </div>
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50
+      transition-all duration-300 ease-out
+      ${
+        isScrolled
+          ? "bg-slate-950/95 backdrop-blur-md border-b border-white/10 h-22"
+          : "bg-transparent h-28"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto h-full px-6 md:px-10 flex items-center justify-between">
+        {/* Logo */}
+        <Link to="/" className="group flex items-center">
+          <img
+            src="/logo_rp_tech_hub.webp"
+            alt="RP Tech Hub"
+            className={`
+              transition-all duration-300 ease-out
+              ${isScrolled ? "h-12 md:h-16" : "h-28 md:h-36"}
+              group-hover:drop-shadow-[0_0_30px_rgba(59,130,246,0.6)]
+            `}
+          />
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden lg:flex items-center space-x-10">
-          <div className="flex items-center space-x-8">
+        <div className="hidden lg:flex items-center gap-10">
+          <div className="flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.href}
-                className={`text-[10px] uppercase tracking-[0.2em] font-black transition-all ${
-                  location.pathname === link.href ? 'text-blue-500' : 'text-slate-300 hover:text-blue-500'
+                className={`text-xs font-semibold uppercase tracking-wider transition-colors
+                ${
+                  location.pathname === link.href
+                    ? "text-blue-500"
+                    : "text-slate-300 hover:text-blue-400"
                 }`}
               >
                 {link.name}
               </Link>
             ))}
           </div>
-          <Link to="/contact" className="px-8 py-3.5 bg-blue-600 text-white text-[10px] uppercase tracking-[0.3em] font-black rounded-sm hover:bg-blue-500 transition-all shadow-[0_15px_40px_rgba(37,99,235,0.4)] active:scale-95">
+
+          <Link
+            to="/contact"
+            className="px-6 py-3 bg-blue-600 text-white text-xs font-semibold uppercase tracking-wider rounded-sm
+            hover:bg-blue-500 transition-all shadow-lg active:scale-95"
+          >
             Consultation
           </Link>
         </div>
 
         {/* Mobile Toggle */}
-        <button className="lg:hidden text-white p-2 hover:bg-white/5 rounded-lg transition-colors" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+        <button
+          className="lg:hidden text-white p-2 rounded-md hover:bg-white/5 transition"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
           {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden absolute top-full left-0 w-full bg-slate-950 border-b border-white/10 py-10 px-8 space-y-8 shadow-2xl animate-glitch">
+        <div className="lg:hidden absolute top-full left-0 w-full bg-slate-950 border-b border-white/10 px-8 py-8 space-y-6 shadow-2xl">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               to={link.href}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="block text-lg uppercase tracking-[0.3em] font-black text-slate-300 hover:text-blue-500 transition-colors"
+              className="block text-base font-semibold uppercase tracking-wider text-slate-300 hover:text-blue-400 transition"
             >
               {link.name}
             </Link>
           ))}
-          <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className="block w-full text-center py-5 bg-blue-600 text-white text-[10px] uppercase tracking-[0.4em] font-black rounded-sm">
+
+          <Link
+            to="/contact"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="block w-full text-center py-4 bg-blue-600 text-white text-xs font-semibold uppercase tracking-wider rounded-sm"
+          >
             Start Consultation
           </Link>
         </div>
