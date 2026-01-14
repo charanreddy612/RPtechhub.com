@@ -7,14 +7,14 @@ export class GeminiService {
 
   async *sendMessageStream(history: { role: 'user' | 'model'; parts: { text: string }[] }[]) {
     // CRITICAL FIX: The Gemini API requires the conversation to start with a 'user' role.
-    // We filter the history to ensure we only send data starting from the first user interaction.
     let validHistory = history;
     const firstUserIndex = history.findIndex(m => m.role === 'user');
     if (firstUserIndex !== -1) {
       validHistory = history.slice(firstUserIndex);
     }
 
-    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+    // Initialize inside the method to ensure process.env is accessible at call time
+    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
     
     try {
       const responseStream = await ai.models.generateContentStream({

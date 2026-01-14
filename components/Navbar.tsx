@@ -31,60 +31,62 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-slate-950/90 backdrop-blur-md border-b border-white/10 py-3' : 'bg-transparent py-6'}`}>
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'bg-slate-950/95 backdrop-blur-md border-b border-white/10 py-3' : 'bg-transparent py-8'}`}>
+      <div className="max-w-7xl mx-auto px-8 md:px-12 flex justify-between items-center">
         <Link to="/" className="flex items-center space-x-4 group">
-          <div className="flex items-center justify-center transition-transform group-hover:scale-110">
-            <InfinityLogo className="w-20 h-12" />
+          <div className="flex items-center justify-center transition-all duration-700 group-hover:scale-105 group-hover:drop-shadow-[0_0_20px_rgba(59,130,246,0.4)]">
+            <InfinityLogo className="w-32 h-16 md:w-40 md:h-18" />
           </div>
           <div className="flex flex-col">
-            <span className="text-2xl font-black tracking-tighter text-white uppercase italic leading-none">
+            <span className="text-2xl md:text-3xl font-black tracking-tighter text-white uppercase italic leading-none">
               RP<span className="text-blue-500">techhub</span>
             </span>
-            <span className="text-[7px] font-bold text-blue-400 uppercase tracking-[0.3em] mt-1 opacity-70 group-hover:opacity-100 transition-opacity">
+            <span className="text-[7px] md:text-[8px] font-black text-blue-400 uppercase tracking-[0.4em] mt-2 opacity-80 group-hover:opacity-100 transition-all">
               Innovation Meets Execution
             </span>
           </div>
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden lg:flex items-center space-x-6">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              to={link.href}
-              className={`text-[10px] uppercase tracking-widest font-bold transition-colors ${
-                location.pathname === link.href ? 'text-blue-500' : 'text-slate-300 hover:text-blue-500'
-              }`}
-            >
-              {link.name}
-            </Link>
-          ))}
-          <Link to="/contact" className="ml-4 px-8 py-3 bg-blue-600 text-white text-[10px] uppercase tracking-widest font-black rounded-sm hover:bg-blue-500 transition-all shadow-lg shadow-blue-600/20 active:scale-95">
+        <div className="hidden lg:flex items-center space-x-10">
+          <div className="flex items-center space-x-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                to={link.href}
+                className={`text-[10px] uppercase tracking-[0.2em] font-black transition-all ${
+                  location.pathname === link.href ? 'text-blue-500' : 'text-slate-300 hover:text-blue-500'
+                }`}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
+          <Link to="/contact" className="px-8 py-3.5 bg-blue-600 text-white text-[10px] uppercase tracking-[0.3em] font-black rounded-sm hover:bg-blue-500 transition-all shadow-[0_15px_40px_rgba(37,99,235,0.4)] active:scale-95">
             Consultation
           </Link>
         </div>
 
         {/* Mobile Toggle */}
         <button className="lg:hidden text-white p-2 hover:bg-white/5 rounded-lg transition-colors" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-          {isMobileMenuOpen ? <X /> : <Menu />}
+          {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden absolute top-full left-0 w-full bg-slate-950 border-b border-white/10 py-8 px-8 space-y-6 shadow-2xl animate-glitch">
+        <div className="lg:hidden absolute top-full left-0 w-full bg-slate-950 border-b border-white/10 py-10 px-8 space-y-8 shadow-2xl animate-glitch">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               to={link.href}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="block text-sm uppercase tracking-[0.2em] font-black text-slate-300 hover:text-blue-500 transition-colors"
+              className="block text-lg uppercase tracking-[0.3em] font-black text-slate-300 hover:text-blue-500 transition-colors"
             >
               {link.name}
             </Link>
           ))}
-          <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className="block w-full text-center py-5 bg-blue-600 text-white text-xs uppercase tracking-[0.3em] font-black rounded-sm">
+          <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className="block w-full text-center py-5 bg-blue-600 text-white text-[10px] uppercase tracking-[0.4em] font-black rounded-sm">
             Start Consultation
           </Link>
         </div>
