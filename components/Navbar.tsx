@@ -1,12 +1,7 @@
-
-import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
 // Fix: Re-imported Link and useLocation from 'react-router-dom' to ensure proper resolution.
-import { Link, useLocation } from 'react-router-dom';
-
-const InfinityLogo = ({ className = "w-12 h-12" }) => (
-  <svg viewBox="0 0 160 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-32 h-16 md:w-44 md:h-20"><defs><linearGradient id="nav-logo-grad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#60a5fa"></stop><stop offset="100%" stop-color="#1d4ed8"></stop></linearGradient></defs><g className="fill-blue-400"><rect x="5" y="38" width="4" height="4" opacity="0.4"></rect><rect x="12" y="28" width="3" height="3" opacity="0.6"></rect><rect x="10" y="48" width="4" height="4" opacity="0.5"></rect><rect x="18" y="32" width="4" height="4" opacity="0.8"></rect><rect x="22" y="52" width="3" height="3" opacity="0.3"></rect><rect x="30" y="40" width="5" height="5"></rect><rect x="38" y="32" width="4" height="4" opacity="0.7"></rect></g><path d="M45 40 C45 25 70 20 80 40 C90 60 115 65 115 40 C115 15 90 20 80 40 C70 60 45 55 45 40 Z" stroke="url(#nav-logo-grad)" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" className="drop-shadow-[0_0_12px_rgba(59,130,246,0.3)]"></path><rect x="35" y="45" width="6" height="6" className="fill-blue-500"></rect><rect x="42" y="25" width="5" height="5" className="fill-blue-500" opacity="0.8"></rect></svg>
-);
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -17,36 +12,36 @@ const Navbar: React.FC = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'IT Services', href: '/it-services' },
-    { name: 'BPO Services', href: '/bpo-services' },
-    { name: 'Marketing', href: '/marketing' },
-    { name: 'Real Estate', href: '/real-estate' },
-    { name: 'Finance', href: '/finance' },
-    { name: 'About', href: '/about' },
-    { name: 'Contact', href: '/contact' },
+    { name: "Home", href: "/" },
+    { name: "IT Services", href: "/it-services" },
+    { name: "BPO Services", href: "/bpo-services" },
+    { name: "Marketing", href: "/marketing" },
+    { name: "Real Estate", href: "/real-estate" },
+    { name: "Finance", href: "/finance" },
+    { name: "About", href: "/about" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'bg-slate-950/95 backdrop-blur-md border-b border-white/10 py-3' : 'bg-transparent py-8'}`}>
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? "bg-slate-950/95 backdrop-blur-md border-b border-white/10 py-3" : "bg-transparent py-8"}`}
+    >
       <div className="max-w-7xl mx-auto px-8 md:px-12 flex justify-between items-center">
         <Link to="/" className="flex items-center space-x-4 group">
-          <div className="flex items-center justify-center transition-all duration-700 group-hover:scale-105 group-hover:drop-shadow-[0_0_20px_rgba(59,130,246,0.4)]">
-            <InfinityLogo className="w-32 h-16 md:w-40 md:h-18" />
-          </div>
-          <div className="flex flex-col">
-            <span className="text-2xl md:text-3xl font-black tracking-tighter text-white uppercase italic leading-none">
-              RP<span className="text-blue-500">techhub</span>
-            </span>
-            <span className="text-[7px] md:text-[8px] font-black text-blue-400 uppercase tracking-[0.4em] mt-2 opacity-80 group-hover:opacity-100 transition-all">
-              Innovation Meets Execution
-            </span>
-          </div>
+          <img
+            src="/logo_rp_tech_hub.webp"
+            alt="RP Tech Hub"
+            className={`
+              transition-all duration-300 ease-out
+              ${isScrolled ? "h-12 md:h-16" : "h-28 md:h-36"}
+              group-hover:drop-shadow-[0_0_30px_rgba(59,130,246,0.45)]
+            `}
+          />
         </Link>
 
         {/* Desktop Nav */}
@@ -57,20 +52,28 @@ const Navbar: React.FC = () => {
                 key={link.name}
                 to={link.href}
                 className={`text-[9px] uppercase tracking-[0.2em] font-black transition-all ${
-                  location.pathname === link.href ? 'text-blue-500' : 'text-slate-300 hover:text-blue-500'
+                  location.pathname === link.href
+                    ? "text-blue-500"
+                    : "text-slate-300 hover:text-blue-500"
                 }`}
               >
                 {link.name}
               </Link>
             ))}
           </div>
-          <Link to="/contact" className="px-8 py-3.5 bg-blue-600 text-white text-[10px] uppercase tracking-[0.3em] font-black rounded-sm hover:bg-blue-500 transition-all shadow-[0_15px_40px_rgba(37,99,235,0.4)] active:scale-95">
+          <Link
+            to="/contact"
+            className="px-8 py-3.5 bg-blue-600 text-white text-[10px] uppercase tracking-[0.3em] font-black rounded-sm hover:bg-blue-500 transition-all shadow-[0_15px_40px_rgba(37,99,235,0.4)] active:scale-95"
+          >
             Consultation
           </Link>
         </div>
 
         {/* Mobile Toggle */}
-        <button className="lg:hidden text-white p-2 hover:bg-white/5 rounded-lg transition-colors" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+        <button
+          className="lg:hidden text-white p-2 hover:bg-white/5 rounded-lg transition-colors"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
           {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
@@ -88,7 +91,11 @@ const Navbar: React.FC = () => {
               {link.name}
             </Link>
           ))}
-          <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className="block w-full text-center py-5 bg-blue-600 text-white text-[10px] uppercase tracking-[0.4em] font-black rounded-sm">
+          <Link
+            to="/contact"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="block w-full text-center py-5 bg-blue-600 text-white text-[10px] uppercase tracking-[0.4em] font-black rounded-sm"
+          >
             Start Consultation
           </Link>
         </div>
