@@ -6,7 +6,8 @@ import Services from '../components/Services.tsx';
 import Testimonials from '../components/Testimonials.tsx';
 import Reveal from '../components/Reveal.tsx';
 import LeadGenSection from '../components/LeadGenSection.tsx';
-import { ChevronRight, Activity, Cpu, Globe, Shield, TrendingUp, ArrowUpRight, Zap } from 'lucide-react';
+// Fix: Added missing 'Briefcase' to the lucide-react imports
+import { ChevronRight, Activity, Cpu, Globe, Shield, TrendingUp, ArrowUpRight, Zap, Coins, Landmark, Briefcase } from 'lucide-react';
 
 const Home: React.FC = () => {
   const commandModules = [
@@ -140,9 +141,52 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* 4. Financial Nexus Section (NEW) */}
+      <section className="py-32 bg-slate-950 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_50%,rgba(59,130,246,0.05),transparent_60%)] pointer-events-none" />
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="bg-slate-900/50 border border-white/10 p-12 md:p-20 flex flex-col lg:flex-row items-center justify-between space-y-12 lg:space-y-0">
+            <Reveal>
+              <div className="max-w-2xl text-center lg:text-left">
+                <div className="inline-flex items-center space-x-3 text-blue-400 mb-6 font-mono text-[9px] tracking-[0.4em] uppercase">
+                   <Landmark size={14} />
+                   <span>Liquidity Engineering</span>
+                </div>
+                <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase italic leading-none mb-8">
+                  The Capital <br /> <span className="text-blue-500">Nexus Node</span>
+                </h2>
+                <p className="text-slate-400 text-lg font-medium leading-relaxed mb-10">
+                  Unlocking high-ticket business and professional loans through institutional-grade leveraging. We handle the complexity; you command the growth.
+                </p>
+                <Link to="/finance" className="inline-flex items-center space-x-4 px-12 py-5 bg-blue-600 text-white text-[10px] font-black uppercase tracking-[0.3em] rounded-sm hover:bg-white hover:text-slate-950 transition-all shadow-[0_20px_60px_rgba(37,99,235,0.2)]">
+                  <span>Initialize Funding Protocol</span>
+                  <ChevronRight size={18} />
+                </Link>
+              </div>
+            </Reveal>
+            
+            <Reveal delay={0.2}>
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { label: "Business Loans", icon: <Briefcase size={20} /> },
+                  { label: "Professional Funding", icon: <TrendingUp size={20} /> },
+                  { label: "Mortgage Leveraging", icon: <Landmark size={20} /> },
+                  { label: "Home Assets", icon: <Coins size={20} /> }
+                ].map((item, i) => (
+                  <div key={i} className="p-8 bg-white/5 border border-white/10 hover:border-blue-500 transition-all text-center">
+                    <div className="text-blue-500 mb-4 mx-auto w-fit">{item.icon}</div>
+                    <div className="text-[9px] font-black text-white uppercase tracking-widest">{item.label}</div>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
       <Testimonials />
 
-      {/* 4. Methodology Call-to-Action */}
+      {/* 5. Methodology Call-to-Action */}
       <section className="py-40 bg-slate-950 border-y border-white/5 relative overflow-hidden text-center">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle,rgba(37,99,235,0.03),transparent_70%)]" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">

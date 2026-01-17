@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Cpu, Globe, BarChart3, Building2, Zap, Shield, Rocket, HeartPulse, Factory, Megaphone, Search, Scale, Quote } from 'lucide-react';
+import { Cpu, Globe, BarChart3, Building2, Zap, Shield, Rocket, HeartPulse, Factory, Megaphone, Search, Landmark, Coins, Briefcase, Key } from 'lucide-react';
 import { Service, SchemaData } from './types';
 
 export const SERVICES: Service[] = [
@@ -45,20 +45,12 @@ export const SERVICES: Service[] = [
     features: ['PPC Management', 'Conversion Rate Optimization', 'Predictive Analytics']
   },
   {
-    id: 'mkt-seo',
-    category: 'Marketing',
-    title: 'Technical SEO',
-    description: 'Semantic core architecture and high-authority link acquisition.',
-    icon: <Search className="w-6 h-6 text-blue-500" />,
-    features: ['Schema Markup', 'Core Web Vitals Optimization', 'Content Clusters']
-  },
-  {
-    id: 're-strategic',
-    category: 'RealEstate',
-    title: 'Strategic Infrastructure',
-    description: 'High-value land acquisition and industrial development corridors.',
-    icon: <Building2 className="w-6 h-6 text-blue-500" />,
-    features: ['100-Point Legal Verification', 'Zoning Analysis', 'JV Partnerships']
+    id: 'finance-cap',
+    category: 'FinancialServices' as any,
+    title: 'Capital Orchestration',
+    description: 'Institutional-grade funding solutions for high-ticket business and professional requirements.',
+    icon: <Landmark className="w-6 h-6 text-blue-500" />,
+    features: ['Business Expansion Loans', 'Professional Practice Funding', 'Mortgage Leveraging']
   }
 ];
 
@@ -113,6 +105,7 @@ You represent RPtechhub, a firm specializing in:
 - BPO Services: Healthcare RCM, Manufacturing Efficiency. (URL: /bpo-services)
 - Marketing: Growth, Technical SEO, ROI. (URL: /marketing)
 - Real Estate: Strategic industrial land corridors. (URL: /real-estate)
+- Financial Services: High-ticket Business Loans, Professional Loans, Home & Mortgage solutions. (URL: /finance)
 
 When discussing a specific service, proactively mention that more details can be found on our specialized pages. 
 The system will automatically detect the following keywords in your response and offer CTA buttons to the user:
@@ -120,7 +113,8 @@ The system will automatically detect the following keywords in your response and
 - "bpo-services-page" -> Link to BPO Services
 - "marketing-page" -> Link to Marketing
 - "real-estate-page" -> Link to Real Estate
+- "finance-page" -> Link to Financial Services
 
-Try to weave these into your conclusion. For example: "You can find our full technical protocol at it-services-page."
+Try to weave these into your conclusion. For example: "For capital orchestration and high-ticket funding, visit our finance-page."
 Direct them to schedule a "Premium Consultation" if they show high intent.
 `;

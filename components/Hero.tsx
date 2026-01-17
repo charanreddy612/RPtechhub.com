@@ -66,9 +66,9 @@ const Hero: React.FC = () => {
 
         <Reveal delay={0.2}>
           <h1 className="text-5xl md:text-8xl font-black tracking-tighter text-white mb-8 leading-[0.85] max-w-5xl mx-auto">
-            <span className="block mb-4 text-slate-200">Building Scalable Enterprises</span>
+            <span className="block mb-4 text-slate-200">THE BLACK LABEL</span>
             <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-sky-300 to-blue-600 uppercase drop-shadow-[0_0_30px_rgba(37,99,235,0.2)]">
-              Through Smart Technology
+              ENTERPRISE ECOSYSTEM
             </span>
           </h1>
         </Reveal>

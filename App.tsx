@@ -12,6 +12,7 @@ import ITServices from './pages/ITServices.tsx';
 import BPOServices from './pages/BPOServices.tsx';
 import MarketingPage from './pages/Marketing.tsx';
 import RealEstatePage from './pages/RealEstate.tsx';
+import FinancialPage from './pages/FinancialServices.tsx';
 import AboutPage from './pages/About.tsx';
 import ContactPage from './pages/Contact.tsx';
 
@@ -40,6 +41,7 @@ export default function App() {
             <Route path="/bpo-services" element={<BPOServices />} />
             <Route path="/marketing" element={<MarketingPage />} />
             <Route path="/real-estate" element={<RealEstatePage />} />
+            <Route path="/finance" element={<FinancialPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
           </Routes>
