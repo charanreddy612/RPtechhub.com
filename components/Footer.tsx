@@ -23,14 +23,6 @@ const Footer: React.FC = () => {
                             "
                 />
               </div>
-              <div className="flex flex-col">
-                <span className="text-3xl font-black tracking-tighter text-white uppercase italic leading-none">
-                  RP<span className="text-blue-500">techhub</span>
-                </span>
-                <span className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] mt-2">
-                  Established 2018
-                </span>
-              </div>
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed max-w-xs font-medium">
               The world's premium multi-disciplinary enterprise agency
