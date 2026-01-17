@@ -1,12 +1,12 @@
 
 import React from 'react';
+// Fix: Re-imported Link from 'react-router-dom' to resolve missing export error.
 import { Link } from 'react-router-dom';
 import Hero from '../components/Hero.tsx';
 import Services from '../components/Services.tsx';
 import Testimonials from '../components/Testimonials.tsx';
 import Reveal from '../components/Reveal.tsx';
 import LeadGenSection from '../components/LeadGenSection.tsx';
-// Fix: Added missing 'Briefcase' to the lucide-react imports
 import { ChevronRight, Activity, Cpu, Globe, Shield, TrendingUp, ArrowUpRight, Zap, Coins, Landmark, Briefcase } from 'lucide-react';
 
 const Home: React.FC = () => {
@@ -19,24 +19,14 @@ const Home: React.FC = () => {
 
   return (
     <main className="bg-slate-950">
-      {/* 1. Global Command Ticker */}
-      <div className="pt-24 bg-slate-950 border-b border-white/5 overflow-hidden whitespace-nowrap py-3">
-        <div className="flex animate-[ticker_60s_linear_infinite] opacity-20 select-none">
-          {Array.from({ length: 4 }).map((_, i) => (
-            <span key={i} className="text-[9px] font-mono font-black uppercase tracking-[0.4em] text-blue-500 mx-16">
-              [SYSTEM_LOG: {Math.random().toString(16).slice(2, 8).toUpperCase()}] // UPTIME: 99.999% // AI_RAG_SYNC: OPTIMAL // DATA_SOVEREIGNTY: HARDENED // ROAS_TARGET: 14X // GLOBAL_REACH: EXPANDING //
-            </span>
-          ))}
-        </div>
+      {/* 
+          Global Command Ticker removed per request. 
+          The Hero component now has primary focus below the navigation.
+      */}
+      
+      <div className="pt-12 md:pt-16">
+        <Hero />
       </div>
-      <style>{`
-        @keyframes ticker {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-      `}</style>
-
-      <Hero />
 
       {/* 2. Tactical Command Grid Section */}
       <section id="ecosystem" className="py-32 bg-slate-950 relative overflow-hidden">

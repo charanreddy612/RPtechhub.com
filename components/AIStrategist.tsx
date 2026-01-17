@@ -3,6 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Send, X, Minimize2, Maximize2, Sparkles, Loader2, Bot, Zap, ArrowRight, ExternalLink } from 'lucide-react';
 import { geminiService } from '../services/geminiService';
 import { ChatMessage } from '../types';
+// Fix: Re-imported useNavigate from 'react-router-dom' to resolve member export error.
 import { useNavigate } from 'react-router-dom';
 
 const AIStrategist: React.FC = () => {
@@ -82,12 +83,15 @@ const AIStrategist: React.FC = () => {
     if (text.includes('bpo-services-page')) ctaLinks.push({ label: 'View BPO Strategy', path: '/bpo-services' });
     if (text.includes('marketing-page')) ctaLinks.push({ label: 'Growth Marketing Lab', path: '/marketing' });
     if (text.includes('real-estate-page')) ctaLinks.push({ label: 'Strategic Land Assets', path: '/real-estate' });
+    // Fix: Added mapping for finance-page as defined in the strategic system instruction.
+    if (text.includes('finance-page')) ctaLinks.push({ label: 'Capital Nexus', path: '/finance' });
 
     const cleanText = text
       .replace(/it-services-page/g, 'our IT Services page')
       .replace(/bpo-services-page/g, 'our BPO Services page')
       .replace(/marketing-page/g, 'our Marketing page')
-      .replace(/real-estate-page/g, 'our Real Estate page');
+      .replace(/real-estate-page/g, 'our Real Estate page')
+      .replace(/finance-page/g, 'our Financial Services page');
 
     return { cleanText, ctaLinks };
   };

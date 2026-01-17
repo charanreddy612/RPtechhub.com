@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Twitter, Linkedin, Github, Mail, MapPin, Phone } from 'lucide-react';
+// Fix: Re-imported Link from 'react-router-dom' to ensure clean resolution of the component.
 import { Link } from 'react-router-dom';
 
 const InfinityLogo = ({ className = "w-12 h-12" }) => (

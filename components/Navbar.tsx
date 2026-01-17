@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+// Fix: Re-imported Link and useLocation from 'react-router-dom' to ensure proper resolution.
 import { Link, useLocation } from 'react-router-dom';
 
 const InfinityLogo = ({ className = "w-12 h-12" }) => (

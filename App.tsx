@@ -1,6 +1,7 @@
 
 import React, { useEffect } from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+// Fix: Re-imported HashRouter, Routes, and Route from 'react-router-dom' to resolve missing export errors.
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar.tsx';
 import AIStrategist from './components/AIStrategist.tsx';
 import Footer from './components/Footer.tsx';
@@ -30,7 +31,7 @@ export default function App() {
   }, []);
 
   return (
-    <Router>
+    <HashRouter>
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <div className="flex-grow">
@@ -49,6 +50,6 @@ export default function App() {
         <Footer />
         <AIStrategist />
       </div>
-    </Router>
+    </HashRouter>
   );
 }
