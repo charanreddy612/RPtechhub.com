@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
             <Link to="/" className="flex flex-col space-y-6 group">
               <div className="flex items-center justify-start">
                 <img
-                  src="/logo_rp_tech_hub.webp"
+                  src="/logo_rp_tech_hub_1.webp"
                   alt="RP TECH HUB"
                   className="
                               w-48 md:w-56

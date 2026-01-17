@@ -45,9 +45,9 @@ const Navbar: React.FC = () => {
         {/* Logo */}
         <Link to="/" className="flex items-center">
           <img
-            src="/logo_rp_tech_hub.webp"
+            src="/logo_rp_tech_hub_1.webp"
             alt="RP TECH HUB"
-            className="h-16 md:h-18 w-auto transition drop-shadow-[0_0_14px_rgba(59,130,246,0.35)] hover:drop-shadow-[0_0_20px_rgba(59,130,246,0.55)]"
+            className="h-20 md:h-18 w-auto transition drop-shadow-[0_0_14px_rgba(59,130,246,0.35)] hover:drop-shadow-[0_0_20px_rgba(59,130,246,0.55)]"
           />
         </Link>
 
