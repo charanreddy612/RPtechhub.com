@@ -24,9 +24,9 @@ const Home: React.FC = () => {
           The Hero component now has primary focus below the navigation.
       */}
       
-      <div className="pt-12 md:pt-16">
+      {/* <div className="pt-12 md:pt-16"> */}
         <Hero />
-      </div>
+      {/* </div> */}
 
       {/* 2. Tactical Command Grid Section */}
       <section id="ecosystem" className="py-32 bg-slate-950 relative overflow-hidden">

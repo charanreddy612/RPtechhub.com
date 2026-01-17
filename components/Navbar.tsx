@@ -8,8 +8,8 @@ const Navbar: React.FC = () => {
 
   const row1 = [
     { name: "Home", href: "/" },
-    { name: "IT", href: "/it-services" },
-    { name: "BPO", href: "/bpo-services" },
+    { name: "IT Services", href: "/it-services" },
+    { name: "BPO Services", href: "/bpo-services" },
     { name: "Marketing", href: "/marketing" },
   ];
 
