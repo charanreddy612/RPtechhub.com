@@ -68,12 +68,12 @@ const Services: React.FC = () => {
 
           <Reveal delay={0.2} width="fit-content">
             {/* <div className="flex flex-wrap gap-3 p-1.5 bg-slate-200/50 backdrop-blur-md rounded-full border border-slate-300/50 shadow-inner"> */}
-            <div className="grid grid-cols-3 gap-3 p-1.5 bg-slate-200/50 backdrop-blur-md rounded-full border border-slate-300/50 shadow-inner">
+            <div className="grid grid-cols-3 gap-3 justify-center p-1.5 bg-slate-200/50 backdrop-blur-md rounded-full border border-slate-300/50 shadow-inner">
               {categories.map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
-                  className={`px-8 py-3 text-[10px] uppercase tracking-[0.25em] font-black rounded-full transition-all duration-500 ${
+                  className={`flex items-center justify-center px-4 py-3 text-[10px] uppercase tracking-[0.25em] font-black rounded-full transition-all duration-500 ${
                     activeCategory === cat
                       ? "bg-slate-950 text-white shadow-2xl scale-105"
                       : "text-slate-500 hover:text-slate-950 hover:bg-white/60"
