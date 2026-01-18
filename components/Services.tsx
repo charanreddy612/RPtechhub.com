@@ -68,7 +68,7 @@ const Services: React.FC = () => {
 
           <Reveal delay={0.2} width="fit-content">
             {/* <div className="flex flex-wrap gap-3 p-1.5 bg-slate-200/50 backdrop-blur-md rounded-full border border-slate-300/50 shadow-inner"> */}
-            <div className="grid grid-cols-3 gap-3 justify-center p-1.5 bg-slate-200/50 backdrop-blur-md rounded-full border border-slate-300/50 shadow-inner">
+            <div className="grid grid-cols-3 gap-3 justify-center p-6 bg-slate-200/50 backdrop-blur-md rounded-full border border-slate-300/50 shadow-inner">
               {categories.map((cat) => (
                 <button
                   key={cat}
