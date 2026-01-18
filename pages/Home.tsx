@@ -19,16 +19,7 @@ const Home: React.FC = () => {
 
   return (
     <main className="bg-slate-950">
-      {/* 
-          Global Command Ticker removed per request. 
-          The Hero component now has primary focus below the navigation.
-      */}
-      
-      {/* <div className="pt-12 md:pt-16"> */}
         <Hero />
-      {/* </div> */}
-
-      {/* 2. Tactical Command Grid Section */}
       <section id="ecosystem" className="py-32 bg-slate-950 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">

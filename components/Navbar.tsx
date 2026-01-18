@@ -54,7 +54,7 @@ const Navbar: React.FC = () => {
         {/* Desktop Nav */}
         <div className="hidden lg:flex flex-col items-center gap-2">
           <div className="flex justify-center gap-6">
-            {row1.map((link) => (
+            {row1.map((link : any) => (
               <NavLink key={link.name} {...link} />
             ))}
           </div>
@@ -62,7 +62,7 @@ const Navbar: React.FC = () => {
           <div className="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
           <div className="flex justify-center gap-6">
-            {row2.map((link) => (
+            {row2.map((link : any) => (
               <NavLink key={link.name} {...link} />
             ))}
           </div>

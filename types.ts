@@ -4,7 +4,8 @@ import React from 'react';
 
 export interface Service {
   id: string;
-  category: 'IT' | 'BPO' | 'Marketing' | 'RealEstate';
+  category: 'IT' | 'BPO' | 'Marketing' | 'RealEstate' | 'Finance';
+  route: string;
   title: string;
   description: string;
   icon: React.ReactNode;

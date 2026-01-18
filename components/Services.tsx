@@ -9,7 +9,7 @@ const Services: React.FC = () => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const sectionRef = useRef<HTMLDivElement>(null);
   
-  const categories = ['All', 'IT', 'BPO', 'Marketing', 'RealEstate'];
+  const categories = ['All', 'IT', 'BPO', 'Marketing', 'RealEstate', 'Finance'];
 
   const filteredServices = activeCategory === 'All' 
     ? SERVICES 
