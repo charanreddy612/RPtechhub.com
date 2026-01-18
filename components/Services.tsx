@@ -73,7 +73,7 @@ const Services: React.FC = () => {
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
-                  className={`flex items-center justify-center px-4 py-3 text-[10px] uppercase tracking-[0.25em] font-black rounded-full transition-all duration-500 ${
+                  className={`flex items-center justify-center px-8 py-3 text-[10px] uppercase tracking-[0.25em] font-black rounded-full transition-all duration-500 ${
                     activeCategory === cat
                       ? "bg-slate-950 text-white shadow-2xl scale-105"
                       : "text-slate-500 hover:text-slate-950 hover:bg-white/60"
